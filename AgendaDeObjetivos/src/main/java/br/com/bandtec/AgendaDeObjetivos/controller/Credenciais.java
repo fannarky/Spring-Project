@@ -10,4 +10,13 @@ public class Credenciais {
 		this.senha = senha;
 	}
 
+	public String getLogin() {
+		// TODO Auto-generated method stub
+		return login;
+	}
+	
+	public String getSenha() {
+		return senha;
+	}
+
 }
