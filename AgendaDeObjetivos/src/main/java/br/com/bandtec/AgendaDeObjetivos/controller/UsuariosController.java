@@ -35,6 +35,21 @@ public class UsuariosController {
 		return ResponseEntity.noContent().build();
 	}
 	
+	@GetMapping("/usuarios/idade/{idade}")
+	public ResponseEntity<List<Usuario>> obterPorIdade(@PathVariable("idade") Integer idade){
+		List<Usuario> usersPorIdade = new ArrayList<>();
+		
+		for(Usuario userid : this.usuario) {
+			if(userid.getIdade() == idade)
+				usersPorIdade.add(userid);
+		}
+		if(!usersPorIdade.isEmpty())
+			return ResponseEntity.ok(usersPorIdade);
+		
+		return ResponseEntity.noContent().build();
+		
+	}
+	
 	@GetMapping("/usuarios")
 	public ResponseEntity<List<Usuario>> getUsuarios(){
 		return ResponseEntity.ok(obterTodosUsuarios());
