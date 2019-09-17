@@ -1,0 +1,6 @@
+#FileLock
+#Mon Sep 16 21:10:57 BRT 2019
+hostName=HSL219
+id=16d3c8ed106982cd1a46414bcfb34300de36e066806
+method=file
+server=10.3.0.58\:56868
