@@ -3,6 +3,7 @@ package br.com.bandtec.AgendaDeObjetivos.domain;
 import java.time.LocalDate;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -29,13 +30,18 @@ public class Objetivo {
 	@JsonProperty
 	private LocalDate dataMaximaParaExecucao;
 	
+	@Embedded
+	@JsonProperty
+	private Prioridade prioridade;
+	
 	public Objetivo() {}
 	
-	public Objetivo(String titulo, String descricao, LocalDate dataMaximaParaExecucao) {
+	public Objetivo(String titulo, String descricao, LocalDate dataMaximaParaExecucao, Prioridade prioridade) {
 		super();
 		this.titulo = titulo;
 		this.descricao = descricao;
 		this.dataMaximaParaExecucao = dataMaximaParaExecucao;
+		this.prioridade = prioridade;
 	}
 
 	@Override

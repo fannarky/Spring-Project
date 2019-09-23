@@ -36,4 +36,12 @@ public class ObjetivoController {
 					ResponseEntity.noContent().build();
 		
 	}
+	
+	@GetMapping("objetivos/prioridade/{prioridade}")
+	public ResponseEntity<List<Objetivo>> buscaPorPrioridade(@PathVariable("prioridade") String prioridade){
+		List<Objetivo> list = this.obj.searchPorPrioridade(prioridade);
+		
+		return list.size() > 0 ? ResponseEntity.ok(list) : ResponseEntity.noContent().build();
+		
+	}
 }

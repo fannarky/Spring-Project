@@ -1,5 +1,8 @@
 package br.com.bandtec.AgendaDeObjetivos.domain;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Credenciais {
 
 	private String login;
@@ -9,6 +12,8 @@ public class Credenciais {
 		this.login = login;
 		this.senha = senha;
 	}
+	
+	public Credenciais() {}
 
 	public String getLogin() {
 		// TODO Auto-generated method stub
