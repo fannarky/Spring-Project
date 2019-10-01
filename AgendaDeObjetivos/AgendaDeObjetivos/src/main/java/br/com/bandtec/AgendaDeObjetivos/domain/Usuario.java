@@ -1,9 +1,12 @@
 package br.com.bandtec.AgendaDeObjetivos.domain;
 
+import java.util.List;
+
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -21,6 +24,9 @@ public class Usuario {
 	private String nome;
 	private Integer idade;
 
+	@OneToMany(mappedBy = "usuario")
+	private List<Objetivo> objetivo;
+	
 	public Usuario() {}
 	
 	public Usuario(String string, int i) {
